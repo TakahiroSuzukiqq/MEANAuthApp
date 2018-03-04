@@ -6,9 +6,11 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 
+
 //#To setup the mongoose, inside the `()` the location of the db need to be described
 // This time at fisrt create the database location inside the project which is the `database.js` inside the config folder 
 mongoose.connect(config.db);  //#the const `config` refers to the variable `db` in `database.js`
+
 
 mongoose.connection.on('connected', () => {
     console.log('Connected to the database ' + config.db);
@@ -17,6 +19,7 @@ mongoose.connection.on('connected', () => {
 mongoose.connection.on('Error', (err) => {
     console.log('Database error' + err);
 });
+
 
 //#To initialize app.js
 const app = express();
@@ -35,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));   //#__dirname: current
 
 //#To setup the Body Parser Middileware
 app.use(bodyParser.json());
+
 
 //#To setup the users routes
 //#To go to the`/users` and passing the `users` variable
