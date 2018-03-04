@@ -33,6 +33,12 @@ const port = 3000;
 //#To setup the CORS Middleware
 app.use(cors());
 
+//#To setup the Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
+
 //#To setup the Static Folder
 app.use(express.static(path.join(__dirname, 'public')));   //#__dirname: current directory, `public` is the folder to be referred
 
