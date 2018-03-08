@@ -12,12 +12,12 @@
     <div id="navbar" class="collapse navbar-collapse">
      
       <ul class="nav navbar-nav navbar-left">
-        <li><a [routerLink]="['/']">Home</a></li>    <!-- #Use `[routerLink]` instead of using `href="#"`-->
+        <li routerLinkactive="active" ><a [routerLink]="['/']">Home</a></li>    <!-- #Use `[routerLink]` instead of using `href="#"`-->
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a [routerLink]="['/login']">Login</a></li>
-        <li><a [routerLink]="['/register']">Register</a></li>
+        <li routerLinkactive="active" routerLinkActiveOptions="{ exact: true }"><a [routerLink]="['/login']">Login</a></li>
+        <li routerLinkactive="active" ><a [routerLink]="['/register']">Register</a></li> <!-- #Actually you don't need to use `routerLinkActiveOptions="{ exact: true }"` -->
       </ul>
 
     </div><!--/.nav-collapse -->
