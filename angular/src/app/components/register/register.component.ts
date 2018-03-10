@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidateService } from '../../services/validate.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
   password: String;
   
   //#Any time we use a service in a component, we need to inject it so that we can use it with `this.` as following
-  constructor(private validateService: ValidateService) { }
+  constructor(private validateService: ValidateService, private flashMessage: FlashMessagesService) { }
 
   ngOnInit() {
   }
@@ -31,14 +32,21 @@ export class RegisterComponent implements OnInit {
   
     //#Reqired field & //#Reqired email
     if(!this.validateService.validateRegister(user)){
-      console.log("Please fill in all fields");
+      //console.log("Please fill in all fields");
+      this.flashMessage.show("Please fill in all fields", {cssClass: 'alert-danger', timeout: 3000}); //#`.show`will take in the mesasge
       return false;
-    } else if(!this.validateService.validateEmail(user.email)){
-      console.log("Please fill in all fields");
+    } 
+    if(!this.validateService.validateEmail(user.email)){
+      //console.log("Please use a valid email");
+      this.flashMessage.show("Please use a valid email", {cssClass: 'alert-danger', timeout: 3000});
       return false;
-    } else {
-      console.log("User data submitted with success");
+    } 
+
+    if(this.validateService.validateRegister(user)) {
+      //console.log("User data submitted with success");
+      this.flashMessage.show("User data submitted with success", {cssClass: 'alert-success', timeout: 3000});
       return true;
     }
+    
   }
 }
