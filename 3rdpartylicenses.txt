@@ -106,15 +106,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 MIT
 MIT
 
+@angular/router@5.2.7
+MIT
+MIT
+
 @angular/forms@5.2.7
 MIT
 MIT
 
 @angular/http@5.2.7
-MIT
-MIT
-
-@angular/router@5.2.7
 MIT
 MIT
 
