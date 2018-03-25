@@ -26,7 +26,11 @@ npm:
 * [Angular HttpClient doesn't send header](https://stackoverflow.com/questions/45286764/angular-httpclient-doesnt-send-header/45286959#45286959)       
 * [[ts] Property 'json' does not exist on type 'Object'.](https://stackoverflow.com/questions/33919710/property-json-does-not-exist-on-type/44673718)  
 * To activate the success response in the `register.component.ts`, you should add `: any` and do like `registerUser(user): any{` in the `registerUser` method in the `auth.service.ts`    
-* [Angular - res.json() is not a function](https://stackoverflow.com/questions/46630893/angular-res-json-is-not-a-function)    
+* [Angular - res.json() is not a function](https://stackoverflow.com/questions/46630893/angular-res-json-is-not-a-function)      
+* [Property '    ' does not exist on type 'Promise'](https://stackoverflow.com/questions/43967110/property-subscribe-does-not-exist-on-type-promise)       
+
+* [Http.post with Promise](https://www.concretepage.com/angular-2/angular-2-http-post-example#promise)       
+
    
      
      

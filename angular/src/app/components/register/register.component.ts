@@ -5,11 +5,12 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 //import { Response } from '@angular/http';
 
-@Component({
+@Component({ 
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
 
   name: String;
@@ -59,8 +60,9 @@ export class RegisterComponent implements OnInit {
 //     }
     
     //#To register user
-    this.authService.registerUser(user).subscribe(data => {        //#`(uer)`: passing in the user object
-      //if(data.response.success){
+    //this.authService.registerUser(user).subscribe(data => {        //#`(user)`: passing in the user object
+    this.authService.registerUser(user).then(data => {               //##Error in Part8: change here to fix the error`error TS2339: Property 'success' does not exist on type 'Object'.`
+    //if(data.response.success){
       if(data.success){
         this.flashMessage.show("User data submitted with success", {cssClass: 'alert-success', timeout: 3000});
         this.router.navigate(['/login']);
